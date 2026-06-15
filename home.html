@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SS Enterprises | Precision Engineering for a Sustainable Future</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- GSAP & Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<!-- AOS for basic fades -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#414755",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d2e0fe",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-container": "#f4ffff",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-container-low": "#f2f4f6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#002022",
+                        "tertiary-fixed-dim": "#00dce6",
+                        "tertiary": "#00666c",
+                        "surface": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "secondary": "#515f78",
+                        "inverse-primary": "#adc6ff",
+                        "on-surface": "#191c1e",
+                        "outline": "#717786",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-container": "#fefcff",
+                        "primary-container": "#0070eb",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-secondary-container": "#55637d",
+                        "tertiary-fixed": "#6ff6ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#008188",
+                        "outline-variant": "#c1c6d7",
+                        "on-primary-fixed-variant": "#004493",
+                        "background": "#f7f9fb",
+                        "primary": "#0058bc",
+                        "on-primary-fixed": "#001a41",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-dim": "#d8dadc",
+                        "on-background": "#191c1e",
+                        "surface-tint": "#005bc1",
+                        "inverse-surface": "#2d3133",
+                        "surface-container": "#eceef0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-xl": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        .marquee {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 2rem;
+        }
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 2rem;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 40px -10px rgba(0, 88, 188, 0.2);
+        }
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+    </style>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-white overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300" id="top-nav">
+<div class="max-w-7xl mx-auto px-gutter flex justify-between items-center h-20 w-full">
+<div class="flex items-center gap-sm">
+<span class="font-display-xl text-headline-md tracking-tighter text-primary">SS Enterprises</span>
+</div>
+
+<div class="hidden md:flex items-center gap-lg">
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="home.html">Home</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="product-catlog.html">Product</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="about-us.html">About</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="contact-us.html">Contact</a>
+
+</div>
+<div class="flex items-center gap-md">
+
+    <!-- Language & Contact -->
+    <div class="hidden lg:flex items-center gap-sm pr-md border-r border-outline-variant/30 relative">
+
+        <!-- Language -->
+        <div class="relative">
+           <a href="https://wa.me/919850368313"
+   target="_blank"
+   class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500/10 hover:bg-green-500 hover:text-white transition-all duration-300">
+
+    <i class="fa-brands fa-whatsapp text-xl"></i>
+
+</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="relative">
+            <button id="accountBtn"
+                class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+                account_circle
+            </button>
+
+            <div id="accountMenu"
+                class="hidden absolute top-10 right-0 w-72 bg-white rounded-xl shadow-xl border z-50 p-4">
+
+                <h4 class="font-semibold text-gray-800 mb-3">
+                    SS Enterprises
+                </h4>
+
+                <div class="space-y-3 text-sm">
+
+                    <a href="tel:+919850368313"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            call
+                        </span>
+                        +91 98503 68313
+                    </a>
+
+                    <a href="tel:+918888135511"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            call
+                        </span>
+                        +91 88881 35511
+                    </a>
+
+                    <a href="mailto:ssenterprises6822@gmail.com"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            mail
+                        </span>
+                        ssenterprises6822@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Request Quote (hide on mobile) -->
+    <button
+        class="magnetic-btn px-md py-sm bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container active:scale-95 transition-all hidden md:inline-flex">
+        Request Quote
+    </button>
+
+    <!-- Mobile Hamburger (show on mobile) -->
+    <button
+        id="mobileMenuBtn"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low transition-all"
+        aria-label="Open menu"
+        aria-expanded="false"
+    >
+        <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+    </button>
+
+</div>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden hidden absolute top-20 left-0 w-full bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 z-50">
+    <div class="max-w-7xl mx-auto px-gutter py-md flex flex-col gap-sm">
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="home.html">Home</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="product-catlog.html">Product</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="about-us.html">About</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="contact-us.html">Contact</a>
+
+        <!-- Optional: keep quote accessible on mobile too -->
+        <a class="magnetic-btn px-md py-sm bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container active:scale-95 transition-all text-center mt-sm" href="#">
+            Request Quote
+        </a>
+    </div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-screen min-h-[520px] sm:min-h-[640px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+
+        <!-- Your Laboratory Banner Image -->
+        <div class="absolute inset-0 bg-[url('assets/banner-home.webp')] bg-cover bg-center -z-10 transition-transform duration-700 ease-out parallax-bg">
+        </div>
+
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-gutter text-center">
+
+        <!-- <h1 class="font-display-xl text-display-xl md:text-8xl text-on-surface mb-md leading-tight opacity-0"
+            id="hero-title">
+            Complete Solutions <br />
+            <span class="text-primary">for Laboratory Needs</span>
+        </h1> -->
+
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-xl opacity-0"
+            id="hero-sub">
+            Trusted supplier of Laboratory Equipment, Chemicals, Glassware,
+            Plasticware, Imported Chemicals and Scientific Consumables with
+            Repair, Maintenance, Calibration and Technical Support Services
+            for Educational, Research, Healthcare and Industrial Laboratories.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-md opacity-0"
+            id="hero-cta">
+
+            <button class="magnetic-btn px-xl py-md bg-primary text-white font-label-sm text-label-sm rounded-xl hover:shadow-lg transition-all">
+                Explore Products
+            </button>
+
+            <button class="px-xl py-md border border-primary text-primary font-label-sm text-label-sm rounded-xl hover:bg-primary/5 transition-all">
+                Request a Quote
+            </button>
+
+        </div>
+
+    </div>
+</header>
+<!-- Intro Section -->
+<section class="py-xl bg-surface">
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div data-aos="fade-right">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest block mb-sm">Trusted Laboratory Partner</span>
+<h2 class="font-headline-lg text-headline-lg mb-md">Complete Laboratory Solutions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg leading-relaxed">
+                  SS Enterprises is a trusted supplier of Laboratory Equipment,
+    Chemicals, Imported Chemicals, Glassware, Plasticware and General
+    Laboratory Consumables. We also provide Repair, Maintenance,
+    Calibration and Technical Support Services to ensure reliable and
+    efficient laboratory operations for educational institutions,
+    research centers, healthcare facilities and industries.
+                </p>
+<button class="group flex items-center gap-sm font-label-sm text-label-sm text-primary font-bold hover:gap-md transition-all">
+                    View Our Products
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<script>
+const languageBtn = document.getElementById("languageBtn");
+const languageMenu = document.getElementById("languageMenu");
+
+const accountBtn = document.getElementById("accountBtn");
+const accountMenu = document.getElementById("accountMenu");
+
+languageBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    languageMenu.classList.toggle("hidden");
+    accountMenu.classList.add("hidden");
+});
+
+accountBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    accountMenu.classList.toggle("hidden");
+    languageMenu.classList.add("hidden");
+});
+
+document.addEventListener("click", function () {
+    languageMenu.classList.add("hidden");
+    accountMenu.classList.add("hidden");
+});
+</script>   
+</div>
+<div class="relative" data-aos="fade-left">
+<div class="aspect-video rounded-xl overflow-hidden shadow-2xl glass-card p-2">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Close-up of a high-tech CNC machining process where a specialized metal component is being carved with extreme precision. Coolant fluid creates a misty atmosphere, while blue LED lights illuminate the metallic surfaces. The aesthetic is clean, professional, and captures the essence of advanced manufacturing technology." src="assets/image-home-1.webp"/>
+</div>  
+<div class="absolute -bottom-md -left-md p-lg glass-card rounded-xl hidden lg:block border border-primary/20 shadow-xl">
+<p class="font-headline-md text-primary mb-xs">20+ Years</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Trusted Laboratory Solutions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us (Bento-ish Grid) -->
+<section class="py-xl bg-background relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-gutter relative z-10">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg mb-sm" data-aos="fade-up">Our Services</h2>
+<p class="text-on-surface-variant font-body-md" data-aos="fade-up" data-aos-delay="100"></p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Quality -->
+<div class="glass-card p-xl rounded-xl hover-glow transition-all duration-500 group" data-aos="fade-up">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary mb-lg transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md">Laboratory Equipment Supplier</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                     Supplying high-quality laboratory instruments, chemicals,
+        imported chemicals, glassware, plastic ware, sundry ware,
+        and general laboratory products.
+                    </p>
+</div>
+<!-- Global Reach -->
+<div class="glass-card p-xl rounded-xl hover-glow transition-all duration-500 group" data-aos="fade-up" data-aos-delay="100">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary mb-lg transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">settings</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md">Repair & Maintenance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                       Professional repair, preventive maintenance, servicing,
+        and performance optimization for laboratory equipment
+        across educational and industrial sectors.
+                    </p>
+</div>
+<!-- Innovation -->
+<div class="glass-card p-xl rounded-xl hover-glow transition-all duration-500 group" data-aos="fade-up" data-aos-delay="200">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary mb-lg transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md">Calibration Services</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Accurate calibration and testing services for laboratory
+        instruments to ensure precision, compliance, and reliable
+        measurement results.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Preview -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
+<div data-aos="fade-right">
+<h2 class="font-headline-lg text-headline-lg">Our Product Categories</h2>
+<p class="text-on-surface-variant font-body-md mt-sm">Leading supplier of laboratory equipment, chemicals, glassware and calibration solutions.</p>
+</div>
+<!-- <div class="flex gap-sm" data-aos="fade-left">
+<button class="p-sm rounded-full border border-outline hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-sm rounded-full border border-outline hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+</div> -->
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg h-auto md:h-[600px]">
+<!-- Machinery -->
+<div class="md:col-span-8 relative group overflow-hidden rounded-2xl cursor-pointer" data-aos="zoom-in">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A massive yellow industrial excavator working at a large-scale construction site during sunrise. The lighting is warm and dramatic, highlighting the mechanical complexity and power of the machine. The image conveys heavy machinery capability in a professional and awe-inspiring industrial setting." src="assets/image-home-2.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-xl text-white">
+<h4 class="font-headline-md text-headline-md mb-xs">Analytical Instruments</h4>
+<p class="font-body-md opacity-80 max-w-md"> Balances, Spectrophotometers, Moisture Analyzers,
+            Titrators, pH Meters and Precision Laboratory Instruments.</p>
+<div class="mt-md h-0.5 w-0 bg-primary transition-all duration-500 group-hover:w-full"></div>
+</div>
+</div>
+<!-- Components -->
+<div class="md:col-span-4 grid grid-rows-2 gap-lg">
+<div class="relative group overflow-hidden rounded-2xl cursor-pointer" data-aos="zoom-in" data-aos-delay="100">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro shot of gleaming stainless steel gears and precision components stacked in a modern laboratory-like industrial setting. The surfaces reflect bright, clinical light, showcasing the high-quality finish and technical detail. The atmosphere is meticulous, clean, and advanced, representing high-end manufacturing components." src="assets/image-home-4.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg text-white">
+<h4 class="font-headline-md text-headline-md mb-xs text-xl">Laboratory Consumables</h4>
+<p class="font-label-sm opacity-80"> Micropipettes, Glassware, Plastic Ware,
+            Refractometers and Laboratory Accessories.</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-2xl cursor-pointer" data-aos="zoom-in" data-aos-delay="200">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract view of stacked industrial raw materials, including high-grade aluminum bars and carbon fiber sheets, in a bright warehouse with floor-to-ceiling windows. Natural light floods the space, creating a clean and sustainable industrial feel. The composition is geometric and modern, representing the foundation of quality manufacturing." src="assets/image-home-5.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg text-white">
+<h4 class="font-headline-md text-headline-md mb-xs text-xl">Chemicals & Reagents</h4>
+<p class="font-label-sm opacity-80"> Laboratory Chemicals, Imported Chemicals,
+            Bulk Chemicals and Standard Solutions.  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Statistics -->
+<section class="py-xl bg-inverse-surface text-surface relative overflow-hidden">
+
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-xl text-center relative z-10">
+<div data-aos="fade-up">
+<p class="text-primary-fixed-dim font-display-xl text-6xl md:text-7xl font-bold mb-xs" id="stat-countries">50+</p>
+<p class="font-label-sm uppercase tracking-widest text-surface-variant">Clients Served</p>
+</div>
+<div data-aos="fade-up" data-aos-delay="100">
+<p class="text-primary-fixed-dim font-display-xl text-6xl md:text-7xl font-bold mb-xs" id="stat-products">2000+</p>
+<p class="font-label-sm uppercase tracking-widest text-surface-variant">Precision Products</p>
+</div>
+<div data-aos="fade-up" data-aos-delay="200">
+<p class="text-primary-fixed-dim font-display-xl text-6xl md:text-7xl font-bold mb-xs" id="stat-years">25+</p>
+<p class="font-label-sm uppercase tracking-widest text-surface-variant">Years of Experience</p>
+</div>
+</div>
+</section>
+<!-- Social Proof / Testimonials -->
+<section class="py-xl bg-background">
+<div class="max-w-7xl mx-auto px-gutter mb-xl text-center">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Trusted by Global Giants</h2>
+<section class="partners-section">
+
+    <!-- Row 1 -->
+    <div class="marquee">
+    <div class="marquee-track marquee-left">
+
+        <img src="assets/logo/shimadzu.webp" class="partner-logo" alt="">
+        <img src="assets/logo/mettler.webp" class="partner-logo" alt="">
+        <img src="assets/logo/thermofisher.webp" class="partner-logo" alt="">
+        <img src="assets/logo/hanna.webp" class="partner-logo" alt="">
+        <img src="assets/logo/eutech.webp" class="partner-logo" alt="">
+        <img src="assets/logo/cole-parma.webp" class="partner-logo" alt="">
+        <img src="assets/logo/brook.webp" class="partner-logo" alt="">
+        <img src="assets/logo/laomed.webp" class="partner-logo" alt="">
+        <img src="assets/logo/merck.webp" class="partner-logo" alt="">
+        <img src="assets/logo/brosil.webp" class="partner-logo" alt="">
+        <img src="assets/logo/remi.webp" class="partner-logo" alt="">
+        <img src="assets/logo/tarson.webp" class="partner-logo" alt="">
+
+        <!-- Duplicate -->
+        <img src="assets/logo/shimadzu.webp" class="partner-logo" alt="">
+        <img src="assets/logo/mettler.webp" class="partner-logo" alt="">
+        <img src="assets/logo/thermofisher.webp" class="partner-logo" alt="">
+        <img src="assets/logo/hanna.webp" class="partner-logo" alt="">
+
+    </div>
+</div>
+
+    <!-- Row 2 -->
+   <div class="marquee">
+    <div class="marquee-track marquee-right">
+
+        <img src="assets/logo/ploylab.webp" class="partner-logo" alt="">
+        <img src="assets/logo/rankem.webp" class="partner-logo" alt="">
+        <img src="assets/logo/qauligen.webp" class="partner-logo" alt="">
+        <img src="assets/logo/systronics.webp" class="partner-logo" alt="">
+        <img src="assets/logo/wensar.webp" class="partner-logo" alt="">
+        <img src="assets/logo/aimil.webp" class="partner-logo" alt="">
+        <img src="assets/logo/citizan scales.webp" class="partner-logo" alt="">
+        <img src="assets/logo/transasai.webp" class="partner-logo" alt="">
+        <img src="assets/logo/labtronic.webp" class="partner-logo" alt="">
+        <img src="assets/logo/lassco.webp" class="partner-logo" alt="">
+        <img src="assets/logo/horiba.webp" class="partner-logo" alt="">
+        <img src="assets/logo/milwaukee.webp" class="partner-logo" alt="">
+        <img src="assets/logo/analab.webp" class="partner-logo" alt="">
+
+        <!-- Duplicate -->
+        <img src="assets/logo/ploylab.webp" class="partner-logo" alt="">
+        <img src="assets/logo/rankem.webp" class="partner-logo" alt="">
+        <img src="assets/logo/qauligen.webp" class="partner-logo" alt="">
+        <img src="assets/logo/systronics.webp" class="partner-logo" alt="">
+
+    </div>
+</div>
+
+</section>
+<style>
+   .marquee{
+    overflow:hidden;
+    width:100%;
+    margin:20px 0;
+}
+
+.marquee-track{
+    display:flex;
+    align-items:center;
+    gap:70px;
+    width:max-content;
+}
+
+.partner-logo{
+    height: 90px;
+    width:auto;
+    object-fit:contain;
+    transition:.3s;
+}
+
+.partner-logo:hover{
+    transform:scale(1.08);
+}
+
+.marquee-left{
+    animation:scrollLeft 35s linear infinite;
+}
+
+.marquee-right{
+    animation:scrollRight 35s linear infinite;
+}
+
+@keyframes scrollLeft{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+}
+
+@keyframes scrollRight{
+    from{transform:translateX(-50%);}
+    to{transform:translateX(0);}
+}
+</style>
+</div>
+<div class="max-w-5xl mx-auto px-gutter mt-xl">
+<div class="glass-card p-xl rounded-3xl relative" data-aos="fade-up">
+<span class="material-symbols-outlined text-6xl text-primary/20 absolute top-sm left-md select-none">format_quote</span>
+<div class="relative z-10">
+<p class="font-body-lg text-body-lg italic text-on-surface-variant mb-lg text-center leading-relaxed">
+                       "SS Enterprises has been our trusted partner for laboratory equipment and calibration services. Their prompt support, quality products, and technical expertise have significantly improved the efficiency and accuracy of our laboratory operations."
+                    </p>
+<div class="flex items-center justify-center gap-md">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Professional corporate headshot of a middle-aged male executive in a sharp business suit, smiling confidently. The lighting is soft and high-key, with a clean professional office background blurred in the distance. The overall look is trustworthy, authoritative, and sophisticated, matching the B2B brand persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzu4Wg3xe_NlxcNLqIcg6_I5eKRrnYbV44p28SozxQcSB2XT1ZIOBPlmW7WinNaKDZ-igPgZVrOaeo5AL1jn4KevJlyOpDnk8Y9vEzTiaK8X3jkfExP78I-WfDrSeHFib-_E3_jS0KPN3GUOYtespFubcHiz5Yu3Ls8aHiWl4POiydrqnDIUlQe_xYYY8QwqbgByb7_Nl0iSsGAEyzfR9ihZE9LanUag6oREzVxg-CVRV9Rjjf13EYfkg1KN19nKFCFEGSxyV4BrSg"/>
+</div>
+<div>
+<p class="font-label-sm text-on-surface font-bold">Jonathan Vance</p>
+<p class="font-label-sm text-on-surface-variant">CTO, Vortex Energy Systems</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl relative overflow-hidden">
+<div class="absolute inset-0 bg-primary z-0">
+
+</div>
+<div class="max-w-7xl mx-auto px-gutter text-center relative z-10 py-xl text-white">
+<h2 class="font-display-xl text-display-xl md:text-7xl mb-md" data-aos="fade-up">Partner with SS Enterprises Today</h2>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto mb-xl opacity-90" data-aos="fade-up" data-aos-delay="100">
+                Let's engineer the future of your enterprise. Our global advisors are ready to discuss your custom project requirements.
+            </p>
+<!-- <div class="flex flex-col sm:flex-row items-center justify-center gap-md" data-aos="fade-up" data-aos-delay="200">
+<button class="px-xl py-md bg-white text-primary font-bold rounded-xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
+                    Initiate Consultation
+                </button>
+<button class="px-xl py-md border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all">
+                    Download Catalog
+                </button>
+</div> -->
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline-variant/20 full-width">
+<div class="max-w-7xl mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-1">
+<img src="assets/logo.png"
+         alt="SS Enterprises Logo"
+         class="h-16 w-auto mb-4 mx-auto md:mx-0">
+<div class="font-display-xl text-headline-md text-surface-container-lowest dark:text-primary mb-md">SS Enterprises</div>
+<p class="font-body-md text-surface-variant dark:text-on-surface-variant">Precision Engineering for a Sustainable Future.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">Quick links </h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="home.html">Home</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="about.html">About us</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="products.html">Product</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="contact.html">Contact us</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">Our services</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Laboratory Equipment</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Analytical Instruments</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Chemicals Supply</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Glassware & Plasticware</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Calibration Services</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Repair & Maintenance</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">GSTIN</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline"
+   href="assets/pdf/GST-Original-Certificates.pdf"
+   target="_blank">
+   27ADFFS2946H1ZU
+</a>
+<br>
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">UDYAM</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline"
+   href="assets/pdf/UDYAM-CERTIFICATES.pdf"
+   target="_blank">
+   Udyam-MH-26-0023377
+</a>
+<p class="text-surface-variant dark:text-on-surface-variant mt-auto font-label-sm text-label-sm opacity-60">© SS Enterprises
+
+Trusted Partner for Laboratory Equipment, Chemicals & Scientific Solutions.</p>
+</div>
+</div>
+</footer>
+<script>
+        // AOS Initialization
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+
+        // GSAP Animations
+        window.addEventListener('load', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Hero Reveal
+            const tl = gsap.timeline();
+            tl.to("#hero-title", { opacity: 1, y: -20, duration: 1.2, ease: "power4.out" })
+              .to("#hero-sub", { opacity: 1, y: -10, duration: 0.8, ease: "power3.out" }, "-=0.8")
+              .to("#hero-cta", { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.4");
+
+            // Parallax Hero
+            gsap.to(".parallax-bg", {
+                scrollTrigger: {
+                    trigger: "header",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                },
+                y: 100
+            });
+
+            // Nav Scroll Effect
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('top-nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('h-16', 'bg-surface/90', 'shadow-md');
+                    nav.classList.remove('h-20');
+                } else {
+                    nav.classList.add('h-20');
+                    nav.classList.remove('h-16', 'bg-surface/90', 'shadow-md');
+                }
+            });
+
+            // Magnetic Buttons Micro-interaction
+            const mButtons = document.querySelectorAll('.magnetic-btn');
+            mButtons.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    gsap.to(btn, {
+                        x: x * 0.2,
+                        y: y * 0.2,
+                        duration: 0.3,
+                        ease: "power3.out"
+                    });
+                });
+                btn.addEventListener('mouseleave', () => {
+                    gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" });
+                });
+            });
+
+            // Counter Animations (Simplified)
+            const animateCounter = (id, target) => {
+                let obj = { val: 0 };
+                gsap.to(obj, {
+                    val: target,
+                    duration: 2,
+                    scrollTrigger: {
+                        trigger: `#${id}`,
+                        start: "top 90%"
+                    },
+                    onUpdate: () => {
+                        document.getElementById(id).innerText = Math.ceil(obj.val) + "+";
+                    }
+                });
+            };
+            animateCounter('stat-countries', 50);
+            animateCounter('stat-products', 2000);
+            animateCounter('stat-years', 25);
+
+        });
+
+        // Mobile menu toggle (run immediately; not dependent on GSAP load)
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            const openMenu = () => {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            };
+            const closeMenu = () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            };
+
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (mobileMenu.classList.contains('hidden')) openMenu();
+                else closeMenu();
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', () => closeMenu());
+
+            // Close on link tap
+            mobileMenu.querySelectorAll('a').forEach((a) => {
+                a.addEventListener('click', () => closeMenu());
+            });
+        }
+    </script>
+</body></html>

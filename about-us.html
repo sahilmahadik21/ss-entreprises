@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | SS Enterprises</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#414755",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d2e0fe",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-container": "#f4ffff",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-container-low": "#f2f4f6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#002022",
+                        "tertiary-fixed-dim": "#00dce6",
+                        "tertiary": "#00666c",
+                        "surface": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "secondary": "#515f78",
+                        "inverse-primary": "#adc6ff",
+                        "on-surface": "#191c1e",
+                        "outline": "#717786",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-container": "#fefcff",
+                        "primary-container": "#0070eb",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-secondary-container": "#55637d",
+                        "tertiary-fixed": "#6ff6ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#008188",
+                        "outline-variant": "#c1c6d7",
+                        "on-primary-fixed-variant": "#004493",
+                        "background": "#f7f9fb",
+                        "primary": "#0058bc",
+                        "on-primary-fixed": "#001a41",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-dim": "#d8dadc",
+                        "on-background": "#191c1e",
+                        "surface-tint": "#005bc1",
+                        "inverse-surface": "#2d3133",
+                        "surface-container": "#eceef0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-xl": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #0058bc, transparent);
+        }
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 40px -10px rgba(0, 88, 188, 0.15);
+        }
+    </style>
+     <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Header / TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300" id="top-nav">
+<div class="max-w-7xl mx-auto px-gutter flex justify-between items-center h-20 w-full">
+<div class="flex items-center gap-sm">
+<span class="font-display-xl text-headline-md tracking-tighter text-primary">SS Enterprises</span>
+</div>
+
+<div class="hidden md:flex items-center gap-lg">
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="home.html">Home</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="product-catlog.html">Product</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="about-us.html">About</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="contact-us.html">Contact</a>
+
+</div>
+<div class="flex items-center gap-md">
+
+    <!-- Language & Contact -->
+    <div class="hidden lg:flex items-center gap-sm pr-md border-r border-outline-variant/30 relative">
+
+        <!-- Language -->
+        <div class="relative">
+           <a href="https://wa.me/919850368313"
+   target="_blank"
+   class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500/10 hover:bg-green-500 hover:text-white transition-all duration-300">
+
+    <i class="fa-brands fa-whatsapp text-xl"></i>
+
+</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="relative">
+            <button id="accountBtn"
+                class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+                account_circle
+            </button>
+
+            <div id="accountMenu"
+                class="hidden absolute top-10 right-0 w-72 bg-white rounded-xl shadow-xl border z-50 p-4">
+
+                <h4 class="font-semibold text-gray-800 mb-3">
+                    SS Enterprises
+                </h4>
+
+                <div class="space-y-3 text-sm">
+
+                    <a href="tel:+919850368313"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            call
+                        </span>
+                        +91 98503 68313
+                    </a>
+
+                    <a href="tel:+918888135511"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            call
+                        </span>
+                        +91 88881 35511
+                    </a>
+
+                    <a href="mailto:ssenterprises6822@gmail.com"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            mail
+                        </span>
+                        ssenterprises6822@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Request Quote (hide on mobile) -->
+    <button
+        class="magnetic-btn px-md py-sm bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container active:scale-95 transition-all hidden md:inline-flex">
+        Request Quote
+    </button>
+
+    <!-- Mobile Hamburger (show on mobile) -->
+    <button
+        id="mobileMenuBtn"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low transition-all"
+        aria-label="Open menu"
+        aria-expanded="false"
+    >
+        <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+    </button>
+
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden hidden absolute top-20 left-0 w-full bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 z-50">
+    <div class="max-w-7xl mx-auto px-gutter py-md flex flex-col gap-sm">
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="home.html">Home</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="product-catlog.html">Product</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="about-us.html">About</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="contact-us.html">Contact</a>
+
+        <a class="magnetic-btn px-md py-sm bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container active:scale-95 transition-all text-center mt-sm" href="#">
+            Request Quote
+        </a>
+    </div>
+</div>
+
+<script>
+const languageBtn = document.getElementById("languageBtn");
+const languageMenu = document.getElementById("languageMenu");
+
+const accountBtn = document.getElementById("accountBtn");
+const accountMenu = document.getElementById("accountMenu");
+
+
+languageBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    languageMenu.classList.toggle("hidden");
+    accountMenu.classList.add("hidden");
+});
+
+accountBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    accountMenu.classList.toggle("hidden");
+    languageMenu.classList.add("hidden");
+});
+
+document.addEventListener("click", function () {
+    languageMenu?.classList.add("hidden");
+    accountMenu?.classList.add("hidden");
+
+    // close mobile menu
+    if (mobileMenu && mobileMenuBtn) {
+        closeMenu();
+    }
+});
+
+// Mobile hamburger
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+let closeMenu = () => {
+    if (!mobileMenu || !mobileMenuBtn) return;
+    mobileMenu.classList.add('hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+};
+
+let openMenu = () => {
+    if (!mobileMenu || !mobileMenuBtn) return;
+    mobileMenu.classList.remove('hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+};
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (mobileMenu.classList.contains('hidden')) openMenu();
+        else closeMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => closeMenu());
+    });
+}
+
+</script> 
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-[614px] sm:h-[614px] min-h-[520px] flex items-center justify-center overflow-hidden">
+
+<div class="relative z-10 text-center max-w-4xl px-gutter">
+<h1 class="font-display-xl text-display-xl text-on-background mb-md">Our Legacy of Excellence</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Delivering trusted laboratory equipment, chemicals, glassware, calibration, and maintenance solutions to educational institutions, research centers, healthcare facilities, and industries across India.</p>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent"></div>
+</section>
+<!-- Story & Vision -->
+<section class="py-xl bg-background overflow-hidden">
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="space-y-lg" id="story-content">
+<h2 class="font-headline-lg text-headline-lg text-primary">Our Commitment to Quality    </h2>
+<div class="space-y-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant">Founded with a vision to provide reliable laboratory solutions, SS Enterprises has become a trusted supplier of scientific instruments, laboratory chemicals, glassware, and testing equipment.
+
+We work closely with educational institutions, research laboratories, healthcare organizations, and industrial facilities to deliver products and services that meet the highest standards of quality and accuracy.</p>
+<div class="p-lg glass-card rounded-xl border-l-4 border-primary">
+<p class="font-headline-md text-headline-md italic text-on-surface">
+
+"Every component that leaves our facility carries the legacy of thousands of hours of research and development. We lead where others follow, setting the benchmark for the next industrial revolution."</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant"></p>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/10 blur-3xl rounded-full transition-transform group-hover:scale-110 duration-700"></div>
+<img alt="Vision" class="relative z-10 rounded-2xl shadow-2xl w-full h-[360px] sm:h-[500px] object-cover" data-alt="A professional high-angle shot of a clean modern factory floor where a sophisticated robotic arm is working on a high-precision component. The lighting is bright and cool-toned, emphasizing a high-end corporate and technological atmosphere. Subtle reflections of cyan and blue light dance on metallic surfaces, reflecting the SS Enterprises brand identity of visionary engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs8NY6ChlaOqfz9O_ZYTWNJnNxgsdQCUOgEVsbY-vYknn4VqbyFwZ83Vw0r6mcXDAGfwoBnw9k4ne5qlf9jm8AG5knlMwT95NW53FQ1xrkqcKl7oHMiEV8QglLNO1BVd7JtVWuP9jUtJ7zMFPJbUhe5wgUgDdnGv_GmV6Rq8SC-VYI39FLSRzW0eaAtTwSmZWsAKMr7sfX4StGVx1N3rOrX1EzZYMTtjatrA3SCEVP4yHYJ4DF9_UrgSlV3f2N6O-z6KguQaJLcSKv"/>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="py-xl bg-surface">
+<div class="max-w-4xl mx-auto px-gutter text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg mb-sm text-on-surface">Our Journey of Growth</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Building trust through quality products and exceptional service.</p>
+</div>
+<div class="relative max-w-5xl mx-auto px-gutter py-lg overflow-hidden">
+<div class="timeline-line absolute left-1/2 top-0 bottom-0 -translate-x-1/2 opacity-30"></div>
+<div class="space-y-xl relative">
+<!-- Timeline Items -->
+<div class="timeline-item flex flex-col md:flex-row items-center w-full" data-year="1999">
+<div class="md:w-1/2 text-right pr-lg hidden md:block">
+<h3 class="font-display-xl text-display-xl text-primary/20">1999</h3>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-8 ring-background">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div class="md:w-1/2 pl-lg pt-4 md:pt-0">
+<div class="glass-card p-lg rounded-xl hover-glow transition-all">
+<span class="md:hidden font-bold text-primary block mb-1">1999</span>
+<h4 class="font-headline-md text-headline-md mb-xs">Founding</h4>
+<p class="text-on-surface-variant">SS Enterprises opens its first research hub in Munich, focusing on heavy-duty industrial automation.</p>
+</div>
+</div>
+</div>
+<div class="timeline-item flex flex-col md:flex-row-reverse items-center w-full" data-year="2008">
+<div class="md:w-1/2 text-left pl-lg hidden md:block">
+<h3 class="font-display-xl text-display-xl text-primary/20">2008</h3>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-8 ring-background">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div class="md:w-1/2 pr-lg pt-4 md:pt-0 text-right">
+<div class="glass-card p-lg rounded-xl hover-glow transition-all">
+<span class="md:hidden font-bold text-primary block mb-1">2008</span>
+<h4 class="font-headline-md text-headline-md mb-xs">Business Expansion</h4>
+<p class="text-on-surface-variant">Business Expansion
+
+Expanded product portfolio to include laboratory chemicals, glassware, and analytical instruments.</p>
+</div>
+</div>
+</div>
+<div class="timeline-item flex flex-col md:flex-row items-center w-full" data-year="2016">
+<div class="md:w-1/2 text-right pr-lg hidden md:block">
+<h3 class="font-display-xl text-display-xl text-primary/20">2016</h3>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-8 ring-background">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<div class="md:w-1/2 pl-lg pt-4 md:pt-0">
+<div class="glass-card p-lg rounded-xl hover-glow transition-all">
+<span class="md:hidden font-bold text-primary block mb-1">2016</span>
+<h4 class="font-headline-md text-headline-md mb-xs">Technical Services</h4>
+<p class="text-on-surface-variant">Introduced equipment maintenance, repair, and calibration services for laboratories and industries.</p>
+</div>
+</div>
+</div>
+<div class="timeline-item flex flex-col md:flex-row-reverse items-center w-full" data-year="2024">
+<div class="md:w-1/2 text-left pl-lg hidden md:block">
+<h3 class="font-display-xl text-display-xl text-primary/20">2024</h3>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold ring-8 ring-background">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<div class="md:w-1/2 pr-lg pt-4 md:pt-0 text-right">
+<div class="glass-card p-lg rounded-xl hover-glow transition-all">
+<span class="md:hidden font-bold text-primary block mb-1">2024</span>
+<h4 class="font-headline-md text-headline-md mb-xs"> Trusted Laboratory Partner</h4>
+<p class="text-on-surface-variant">Serving educational institutions, research laboratories, healthcare facilities, and industrial clients across India.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-xl bg-background">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end gap-md mb-xl">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Leadership Team</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Dedicated professionals committed to delivering quality laboratory solutions.</p>
+</div>
+<button class="magnetic-btn border border-primary text-primary px-lg py-sm rounded-lg font-label-sm text-label-sm hover:bg-primary/5">View Advisory Board</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Exec 1 -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container hover-glow transition-all duration-500 border border-outline-variant/20">
+<img alt="CEO" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional portrait of a male executive in a sharp navy blue suit, standing in a brightly lit, modern architectural office with glass walls. The lighting is soft and flattering, creating a premium and authoritative corporate atmosphere. The background shows a hint of a futuristic city skyline, suggesting global influence and forward-thinking leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ74usoOFZVyKihhWlnU5sSsic6oztKsD4nbrxHqf5_z-U-YF5eY6ldUD1x9W880BRMZ3Qkygj6ctrfotqZsSWOzINf1WicIzVvkU-KhzweDP4Z3vRaNm00yQNRy_X4sDYgzPT5K-QuWVsF1Vne5fPcxoe5hUocn6im3FL89O7OCg6G0iM51098_M6UvNMWetZN3udLU7gTEUDeMSSvKnnB_ScjAJ2I0QNwFWlVNNiZLotMx1JrY5d62xQSP7bwVMgTnOOOK_JNkik"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-end p-lg">
+<p class="text-white font-label-sm uppercase tracking-widest mb-1 opacity-80">Chief Executive Officer</p>
+<h4 class="text-white font-headline-md">Marcus Thorne</h4>
+<div class="flex gap-sm mt-md">
+<span class="material-symbols-outlined text-white text-sm">link</span>
+<span class="material-symbols-outlined text-white text-sm">mail</span>
+</div>
+</div>
+<div class="p-md group-hover:opacity-0 transition-opacity">
+<h4 class="font-headline-md text-on-surface">Marcus Thorne</h4>
+<p class="font-label-sm text-on-surface-variant">Chief Executive Officer</p>
+</div>
+</div>
+<!-- Exec 2 -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container hover-glow transition-all duration-500 border border-outline-variant/20">
+<img alt="CTO" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional portrait of a female executive with an intelligent, focused expression, wearing a minimalist gray blazer. She is set against a background of high-tech digital screens displaying abstract data visualizations. The overall mood is sophisticated, professional, and technologically advanced, aligned with the SS Enterprises brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS-K0wOFU7s9N8SLqX2QIssT2p0YVfb1_Co_35HdwkXi7X540yJgn9-2iUyOeBG-6oM4gEcuokDL9SAXfuXScfkQ7LfafsaAPTHWAUILrprBNCAOtOpeK4-WAwhMxWVmWmUGjrvlf-bF8_2pOUGWA8WmMnlg5U9YKD7innOZKS9HXc2yH3nOhLG_QKq2X2Pf8oycJu2djzI-Ib4dUqX8hYU4ucHaPsXGfRm-Ib0AP0Wtd9jv2VZizV1ND8mXqiRTme5gwE96HEsIQl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-end p-lg">
+<p class="text-white font-label-sm uppercase tracking-widest mb-1 opacity-80">Chief Technology Officer</p>
+<h4 class="text-white font-headline-md">Dr. Elena Rossi</h4>
+<div class="flex gap-sm mt-md">
+<span class="material-symbols-outlined text-white text-sm">link</span>
+<span class="material-symbols-outlined text-white text-sm">mail</span>
+</div>
+</div>
+<div class="p-md group-hover:opacity-0 transition-opacity">
+<h4 class="font-headline-md text-on-surface">Dr. Elena Rossi</h4>
+<p class="font-label-sm text-on-surface-variant">Chief Technology Officer</p>
+</div>
+</div>
+<!-- Exec 3 -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container hover-glow transition-all duration-500 border border-outline-variant/20">
+<img alt="COO" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional portrait of a male executive in his late 40s, dressed in a sharp charcoal suit. He is standing in a spacious, light-filled corridor of a modern industrial headquarters. The lighting is clean and professional, emphasizing a mood of reliability and operational excellence. The color palette is dominated by neutral tones with subtle primary blue accents in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP1XgPt8NCSN1Fd0RCHrMmj9g6w0jA9GyVjVymsSLi8GX1nVGHv4z2Ctuw08OKMgvFJz0do6VzFu7KKkbPMbZWOoruhX7u-vb341u8VLcc32XciSKtt3NO-s8z1Ksh-mXfme203dU5pDJSh5r3I4fAkx7eURB10CGNAGYLHsjXG0VWsh8Vazyn2IJk2xU6u_wh-LpUujT9-OJ1bF1P-FVBLJUMvT-V-EKl_4K1qKZhp-7No2bs-GV0BQMJ3gWdjnFVc5fMnBA5d00Z"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-end p-lg">
+<p class="text-white font-label-sm uppercase tracking-widest mb-1 opacity-80">Chief Operating Officer</p>
+<h4 class="text-white font-headline-md">Jonathan Vance</h4>
+<div class="flex gap-sm mt-md">
+<span class="material-symbols-outlined text-white text-sm">link</span>
+<span class="material-symbols-outlined text-white text-sm">mail</span>
+</div>
+</div>
+<div class="p-md group-hover:opacity-0 transition-opacity">
+<h4 class="font-headline-md text-on-surface">Jonathan Vance</h4>
+<p class="font-label-sm text-on-surface-variant">Chief Operating Officer</p>
+</div>
+</div>
+<!-- Exec 4 -->
+<div class="group relative overflow-hidden rounded-2xl bg-surface-container hover-glow transition-all duration-500 border border-outline-variant/20">
+<img alt="CFO" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional corporate headshot of a woman in her 30s with a confident and approachable smile, wearing an elegant cream-colored business dress. The background is a blurred office lobby with expansive floor-to-ceiling windows and lush indoor greenery. The lighting is warm and natural, creating an atmosphere of trust and financial stability, matching the premium B2B style of the site." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGehw54SIYeWPTA0UJbIzPhL4vivkg_jQjBB3qncX-fW6wTenxfaCoxK7vAQga3ZFQZjKR0Q7Kqhl42GPN2_j3NRBCS2SV3rf02xXRnFiitbq4Ay4l1hgKl9nKDGhMRPyUz1JOF22e8BSJENyU1CCLLQsKCvfFYoRMMAagL-5qX-Hv6TDiKnLSw-IunWXLZPDPyLWBirzYtTPWnwPM4sX6kI-dnQEV_OSpELMckBGYOP7D5jnPrKPWRAsdATxYcyIW1wYsvsh6mK1J"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-end p-lg">
+<p class="text-white font-label-sm uppercase tracking-widest mb-1 opacity-80">Chief Financial Officer</p>
+<h4 class="text-white font-headline-md">Sarah Jenkins</h4>
+<div class="flex gap-sm mt-md">
+<span class="material-symbols-outlined text-white text-sm">link</span>
+<span class="material-symbols-outlined text-white text-sm">mail</span>
+</div>
+</div>
+<div class="p-md group-hover:opacity-0 transition-opacity">
+<h4 class="font-headline-md text-on-surface">Sarah Jenkins</h4>
+<p class="font-label-sm text-on-surface-variant">Chief Financial Officer</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Infrastructure Gallery -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xl text-center">Products & Services</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md h-[800px]">
+<div class="md:col-span-8 overflow-hidden rounded-2xl relative group">
+<img alt="Warehouse" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic wide shot of a massive, ultra-modern automated warehouse. Rows of high-density racking units stretch into the distance, with bright LED lighting creating a clean and efficient workspace. Autonomous logistics robots move silently through the aisles. The color palette is composed of cool grays, pristine whites, and glowing primary blue indicators." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADv0rosRNM-N3t9IQkKUZUwqes6UiMGvKVH6PGhR6wUtLzMGhzqMonOay3b1BdOiyPr-qOKCr5uf7nGIs7bwdcItLzPDLeN9RuLGudZlGq7oE80fYNP5kap0F21GIF34ZocI5uO51f7MRV3p-1_OT2vmcsZCNGAOUIWuvJIljNwcPdPqgcZTxeqvIc7_MuTHV_xvzSnpDtPvh3kSegGgRFW2k-PMOLslBlE__nS8uaiMChz_2DKDpMx-nCu8Pzu1KP7yZQ8PB1_7LR"/>
+<div class="absolute bottom-lg left-lg p-lg glass-card rounded-xl">
+<h5 class="font-headline-md text-headline-md">Laboratory Equipment</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">1.2 Million sq. ft. automation capacity.</p>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-md">
+<div class="h-1/2 overflow-hidden rounded-2xl relative group">
+<img alt="Production" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up high-tech view of an assembly line where complex circuit boards and industrial components are being manufactured. The image highlights extreme precision with macro detail of silver and gold-plated surfaces under bright, studio-quality technical lighting. A sophisticated cyan glow emanates from monitoring equipment, creating a professional and futuristic industrial vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWv5fELjUjJBnUBu-l67vxCP-0z31cB_gy0goukbGZja7LXoOpmfKNZLL4rzSxqhOFW55P3u7JrJTSYKOyw8gUg45P_n9FSui3CiWrxXeBTfqWKOW_OT5r2oenol-O51i7sgLCEkjyzNjdvydbOerxEDcv-XfRsPo_WvjuoLN_ynH-j6ftnzN_qBanPwdmIGSDWHtQJHpNma-rcdfQc7joNnzSVdcCtSlU_69AFgdYzY-iXPFmllMJqdLPQdGBMG0Wr5DfPSzN9ovc"/>
+</div>
+<div class="h-1/2 overflow-hidden rounded-2xl relative group">
+<img alt="Quality" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A clean and clinical laboratory setting where high-precision industrial components are being tested for quality. The room is filled with bright, diffused white light, emphasizing the pristine and sterile conditions of the manufacturing process. A technician in a white lab coat is visible in the background, out of focus, while the sharp focus is on the advanced testing equipment in the foreground." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPEz2f3M9HD_bWi583x1AALayYRwdgpoUYOFkhl3Bfdy3yyDJTwzP4MMcTG1nJW03DKgM9dR0SQ9tYsnesxBeoX_GUDKKBwoqrNm5h47P4JzfQyLox_Im65iosSG8NpbBHfDnCnHoJl-agG8tfc8DHYBg-mwghIVE2H7RMQmsivDjt8KBPEoHuJlOfRnUmPT8fCGerDefTjcaxbjsg8KPopgFBIRIHJgGTD1d5on7bMkkc3Vs449xUQYQw4HZMBKRxmq9geuHztWln"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications -->
+<section class="py-xl bg-background">
+<div class="max-w-7xl mx-auto px-gutter text-center">
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-sm">Uncompromising Quality</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xl">Trusted Quality Standards</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-xl items-center opacity-60">
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">verified</span>
+<p class="font-label-sm text-label-sm">Quality Products</p>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">security</span>
+<p class="font-label-sm text-label-sm">Reliable Technical Support</p>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">shield_with_heart</span>
+<p class="font-label-sm text-label-sm">Professional Calibration Services
+</p>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">eco</span>
+<p class="font-label-sm text-label-sm">Timely Delivery</p>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">handyman</span>
+<p class="font-label-sm text-label-sm">Customer Satisfaction</p>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">energy_savings_leaf</span>
+<p class="font-label-sm text-label-sm">Industry Expertise</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Growth Plans -->
+<section class="py-xl relative overflow-hidden bg-primary text-on-primary">
+<div class="absolute inset-0 bg-primary-container mix-blend-multiply opacity-20"></div>
+
+<div class="max-w-4xl mx-auto px-gutter relative z-10 text-center">
+<h2 class="font-display-xl text-headline-lg mb-lg">Industry Expertise</h2>
+<div class="space-y-md font-body-lg text-body-lg leading-relaxed text-primary-fixed">
+<p>SS Enterprises continues to provide reliable laboratory equipment, chemicals, glassware, maintenance, and calibration services that help laboratories achieve accurate and dependable results.</p>
+<p>Our commitment is to deliver quality products, technical expertise, and outstanding customer service for every client we serve.</p>
+</div>
+<div class="mt-xl">
+<button class="bg-white text-primary px-xl py-md rounded-lg font-headline-md hover:scale-105 transition-transform active:scale-95 shadow-lg"> Request a Quote</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline-variant/20 full-width">
+<div class="max-w-7xl mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-1">
+<img src="assets/logo.png"
+         alt="SS Enterprises Logo"
+         class="h-16 w-auto mb-4 mx-auto md:mx-0">
+<div class="font-display-xl text-headline-md text-surface-container-lowest dark:text-primary mb-md">SS Enterprises</div>
+<p class="font-body-md text-surface-variant dark:text-on-surface-variant">Precision Engineering for a Sustainable Future.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">Quick links </h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="home.html">Home</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="about.html">About us</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="products.html">Product</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="contact.html">Contact us</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">Our services</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Laboratory Equipment</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Analytical Instruments</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Chemicals Supply</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Glassware & Plasticware</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Calibration Services</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Repair & Maintenance</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">GSTIN</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline"
+   href="assets/pdf/GST-Original-Certificates.pdf"
+   target="_blank">
+   27ADFFS2946H1ZU
+</a>
+<br>
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">UDYAM</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline"
+   href="assets/pdf/UDYAM-CERTIFICATES.pdf"
+   target="_blank">
+   Udyam-MH-26-0023377
+</a>
+<p class="text-surface-variant dark:text-on-surface-variant mt-auto font-label-sm text-label-sm opacity-60">© SS Enterprises
+
+Trusted Partner for Laboratory Equipment, Chemicals & Scientific Solutions.</p>
+</div>
+</div>
+</footer>
+<script>
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Timeline Animation
+        gsap.utils.toArray('.timeline-item').forEach((item, index) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                x: index % 2 === 0 ? -100 : 100,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // Story Animation
+        gsap.from("#story-content", {
+            scrollTrigger: {
+                trigger: "#story-content",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1.2,
+            ease: "power2.out"
+        });
+
+        // Magnetic Button Effect
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // Navigation Transparency Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('h-20');
+                nav.style.height = '64px';
+            } else {
+                nav.classList.remove('py-2', 'shadow-md');
+                nav.classList.add('h-20');
+                nav.style.height = '80px';
+            }
+        });
+    </script>
+</body>
+</html>

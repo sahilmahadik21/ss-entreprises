@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | SS Enterprises</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#414755",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#d6e3ff",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#d2e0fe",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#f4ffff",
+                    "primary-fixed": "#d8e2ff",
+                    "inverse-on-surface": "#eff1f3",
+                    "primary-fixed-dim": "#adc6ff",
+                    "surface-container-low": "#f2f4f6",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#002022",
+                    "tertiary-fixed-dim": "#00dce6",
+                    "tertiary": "#00666c",
+                    "surface": "#f7f9fb",
+                    "on-primary": "#ffffff",
+                    "secondary": "#515f78",
+                    "inverse-primary": "#adc6ff",
+                    "on-surface": "#191c1e",
+                    "outline": "#717786",
+                    "surface-bright": "#f7f9fb",
+                    "on-primary-container": "#fefcff",
+                    "primary-container": "#0070eb",
+                    "on-tertiary-fixed-variant": "#004f53",
+                    "on-secondary-container": "#55637d",
+                    "tertiary-fixed": "#6ff6ff",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#008188",
+                    "outline-variant": "#c1c6d7",
+                    "on-primary-fixed-variant": "#004493",
+                    "background": "#f7f9fb",
+                    "primary": "#0058bc",
+                    "on-primary-fixed": "#001a41",
+                    "secondary-fixed-dim": "#b9c7e4",
+                    "on-secondary-fixed-variant": "#39475f",
+                    "on-secondary-fixed": "#0d1c32",
+                    "surface-dim": "#d8dadc",
+                    "on-background": "#191c1e",
+                    "surface-tint": "#005bc1",
+                    "inverse-surface": "#2d3133",
+                    "surface-container": "#eceef0",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-high": "#e6e8ea"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "md": "16px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "container-max": "1440px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-xl": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .magnetic-btn {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .magnetic-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px -10px rgba(0, 88, 188, 0.3);
+        }
+        .hover-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        .hover-glow::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 88, 188, 0.08) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .hover-glow:hover::after {
+            opacity: 1;
+        }
+    </style>
+     <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300" id="top-nav">
+<div class="max-w-7xl mx-auto px-gutter flex justify-between items-center h-20 w-full">
+<div class="flex items-center gap-sm">
+<span class="font-display-xl text-headline-md tracking-tighter text-primary">SS Enterprises</span>
+</div>
+
+<div class="hidden md:flex items-center gap-lg">
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="home.html">Home</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="product-catlog.html">Product</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="about-us.html">About</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="contact-us.html">Contact</a>
+
+</div>
+<div class="flex items-center gap-md">
+
+    <!-- Language & Contact -->
+    <div class="hidden lg:flex items-center gap-sm pr-md border-r border-outline-variant/30 relative">
+
+        <!-- Language -->
+        <div class="relative">
+           <a href="https://wa.me/919850368313"
+   target="_blank"
+   class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500/10 hover:bg-green-500 hover:text-white transition-all duration-300">
+
+    <i class="fa-brands fa-whatsapp text-xl"></i>
+
+</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="relative">
+            <button id="accountBtn"
+                class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+                account_circle
+            </button>
+
+            <div id="accountMenu"
+                class="hidden absolute top-10 right-0 w-72 bg-white rounded-xl shadow-xl border z-50 p-4">
+
+                <h4 class="font-semibold text-gray-800 mb-3">
+                    SS Enterprises
+                </h4>
+
+                <div class="space-y-3 text-sm">
+
+                    <a href="tel:+919850368313"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            call
+                        </span>
+                        +91 98503 68313
+                    </a>
+
+                    <a href="tel:+918888135511"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            call
+                        </span>
+                        +91 88881 35511
+                    </a>
+
+                    <a href="mailto:ssenterprises6822@gmail.com"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            mail
+                        </span>
+                        ssenterprises6822@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Request Quote (hide on mobile) -->
+    <button
+        class="magnetic-btn px-md py-sm bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container active:scale-95 transition-all hidden md:inline-flex">
+        Request Quote
+    </button>
+
+    <!-- Mobile Hamburger (show on mobile) -->
+    <button
+        id="mobileMenuBtn"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low transition-all"
+        aria-label="Open menu"
+        aria-expanded="false"
+    >
+        <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+    </button>
+
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden hidden absolute top-20 left-0 w-full bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 z-50">
+    <div class="max-w-7xl mx-auto px-gutter py-md flex flex-col gap-sm">
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="home.html">Home</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="product-catlog.html">Product</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="about-us.html">About</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="contact-us.html">Contact</a>
+
+        <a class="magnetic-btn px-md py-sm bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container active:scale-95 transition-all text-center mt-sm" href="#">
+            Request Quote
+        </a>
+    </div>
+</div>
+
+<script>
+const languageBtn = document.getElementById("languageBtn");
+const languageMenu = document.getElementById("languageMenu");
+
+
+const accountBtn = document.getElementById("accountBtn");
+const accountMenu = document.getElementById("accountMenu");
+
+languageBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    languageMenu.classList.toggle("hidden");
+    accountMenu.classList.add("hidden");
+});
+
+accountBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    accountMenu.classList.toggle("hidden");
+    languageMenu.classList.add("hidden");
+});
+
+document.addEventListener("click", function () {
+    languageMenu?.classList.add("hidden");
+    accountMenu?.classList.add("hidden");
+
+    // close mobile menu
+    if (mobileMenu && mobileMenuBtn) {
+        closeMenu();
+    }
+});
+
+// Mobile hamburger
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+let closeMenu = () => {
+    if (!mobileMenu || !mobileMenuBtn) return;
+    mobileMenu.classList.add('hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+};
+
+let openMenu = () => {
+    if (!mobileMenu || !mobileMenuBtn) return;
+    mobileMenu.classList.remove('hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+};
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (mobileMenu.classList.contains('hidden')) openMenu();
+        else closeMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => closeMenu());
+    });
+}
+</script>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[614px] sm:h-[614px] min-h-[480px] flex items-center justify-center overflow-hidden">
+
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+<div class="relative z-10 max-w-4xl mx-auto px-gutter text-center">
+<span class="font-label-sm text-label-sm text-primary tracking-[0.2em] uppercase mb-md block">Get in Touch</span>
+<h1 class="font-display-xl text-display-xl md:text-display-xl text-on-surface mb-lg">Let's Support Your Laboratory Needs</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                 Let's Support Your Laboratory Needs
+                </p>
+</div>
+</section>
+<!-- Contact & Form Grid -->
+<section class="max-w-7xl mx-auto px-gutter -mt-24 relative z-20 pb-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Inquiry Form -->
+<div class="lg:col-span-7">
+<!-- <div class="bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant/30 glass-card">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-lg">Project Inquiry</h2>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-lg" id="contactForm">
+<div class="hidden">
+  <input type="text" id="productInterestHidden" name="productInterestHidden" value=""/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Full Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Email Address</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@company.com" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Company Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Global Logistics Inc." type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Product Interest</label>
+<select class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none">
+<option>Select an Industry Solution</option>
+<option>Laboratory Equipment</option>
+<option>Analytical Instruments</option>
+<option>Laboratory Chemicals</option>
+<option>Glassware & Plasticware</option>
+<option>Calibration Services</option>
+<option>Repair & Maintenance</option>
+<option>General Inquiry</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Detailed Message</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Describe your project requirements and timelines..." rows="5"></textarea>
+</div>
+<div class="md:col-span-2">
+<button class="w-full md:w-auto bg-primary text-on-primary px-xl py-md rounded-lg font-headline-md text-headline-md magnetic-btn flex items-center justify-center gap-md" type="submit">
+                                   Request a Quote
+                                    <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</form>
+</div> -->
+</div>
+<!-- Office Locations -->
+    <div class="lg:col-span-12 flex justify-center">
+    <!-- Location: New York -->
+    <div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/30 hover-glow group transition-all duration-300">
+    <div class="flex justify-between items-start mb-md">
+    <div>
+    <h3 class="font-headline-md text-headline-md text-on-surface">Pune</h3>
+    <p class="font-label-sm text-label-sm text-primary uppercase"></p>
+    </div>
+    <span class="material-symbols-outlined text-primary text-3xl">location_city</span>
+    </div>
+    <div class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+    <p class="flex items-center gap-md"><span class="material-symbols-outlined text-md">map</span>B 33/10,
+    Upper Indiranagar,
+    Near VIT College,
+    Bibvewadi,
+    Pune – 411037</p>
+    <p class="flex items-center gap-md"><span class="material-symbols-outlined text-md">call</span> +91 98503 68313 |
+    +91 88881 35511</p>
+    <p class="flex items-center gap-md"><span class="material-symbols-outlined text-md">mail</span>ssenterprises6822@gmail.com</p>
+    </div>
+    </div>
+    <!-- Location: Berlin -->
+
+    </div>
+</div>
+</section>
+<!-- Interactive Map UI Placeholder -->
+    <section class="hq-section">
+
+    <div class="vfx-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="particles"></div>
+
+    <div class="container">
+
+        <div class="info-card">
+
+            <span class="badge">SS ENTERPRISES HQ</span>
+
+            <h2>Serving Laboratories Across India</h2>
+
+            <p>
+                Trusted supplier of laboratory equipment,
+                chemicals, glassware, calibration and
+                maintenance solutions.
+            </p>
+
+            <div class="contact-info">
+
+                <div>
+                    <strong>Location</strong>
+                    <span>
+                        B 33/10, Upper Indiranagar,
+                        Near VIT College,
+                        Bibvewadi, Pune - 411037
+                    </span>
+                </div>
+
+                <div>
+                    <strong>Phone</strong>
+                    <span>
+                        +91 98503 68313<br>
+                        +91 88881 35511
+                    </span>
+                </div>
+
+                <div>
+                    <strong>Email</strong>
+                    <span>
+                        ssenterprises6822@gmail.com
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- HQ Marker -->
+        <div class="hq-pin">
+
+            <div class="orbit orbit1"></div>
+            <div class="orbit orbit2"></div>
+
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring delay"></div>
+
+            <div class="center-dot"></div>
+
+            <div class="pin-label">
+                Pune HQ
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <style>
+        .hq-section{
+    position:relative;
+    height:800px;
+    overflow:hidden;
+    background:#020617;
+}
+
+/* Background Image */
+.vfx-bg{
+    position:absolute;
+    inset:0;
+    background:
+    url("assets/Map-1.webp")
+    center/cover no-repeat;
+    filter:brightness(.25);
+}
+
+/* Neon Grid */
+.grid-overlay{
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(59,130,246,.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,.15) 1px, transparent 1px);
+
+    background-size:60px 60px;
+
+    animation:gridMove 15s linear infinite;
+}
+
+@keyframes gridMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(60px);
+    }
+}
+
+/* Floating Particles */
+.particles::before,
+.particles::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(circle,#38bdf8 1px,transparent 1px);
+
+    background-size:80px 80px;
+
+    animation:floatParticle 25s linear infinite;
+    opacity:.4;
+}
+
+.particles::after{
+    animation-duration:40s;
+}
+
+@keyframes floatParticle{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-300px);
+    }
+}
+
+/* Content */
+.container{
+    position:relative;
+    z-index:10;
+    max-width:1400px;
+    margin:auto;
+    height:100%;
+}
+
+.info-card{
+    position:absolute;
+    left:60px;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:500px;
+
+    backdrop-filter:blur(25px);
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    color:white;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 18px;
+
+    background:
+    rgba(59,130,246,.25);
+
+    border-radius:999px;
+
+    margin-bottom:20px;
+}
+
+.info-card h2{
+    font-size:48px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.info-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+.contact-info{
+    margin-top:30px;
+}
+
+.contact-info div{
+    margin-bottom:20px;
+}
+
+.contact-info strong{
+    display:block;
+    color:#38bdf8;
+    margin-bottom:6px;
+}
+
+.contact-info span{
+    color:#e2e8f0;
+}
+
+/* HQ Pin */
+.hq-pin{
+    position:absolute;
+    top:50%;
+    right:22%;
+    transform:translateY(-50%);
+}
+
+/* Rotating Rings */
+.orbit{
+    position:absolute;
+    border-radius:50%;
+    border:2px solid rgba(56,189,248,.3);
+}
+
+.orbit1{
+    width:180px;
+    height:180px;
+    left:-90px;
+    top:-90px;
+    animation:rotate 12s linear infinite;
+}
+
+.orbit2{
+    width:260px;
+    height:260px;
+    left:-130px;
+    top:-130px;
+    animation:rotateReverse 18s linear infinite;
+}
+
+@keyframes rotate{
+    from{transform:rotate(0);}
+    to{transform:rotate(360deg);}
+}
+
+@keyframes rotateReverse{
+    from{transform:rotate(360deg);}
+    to{transform:rotate(0);}
+}
+
+/* Center Dot */
+.center-dot{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#38bdf8;
+
+    box-shadow:
+    0 0 30px #38bdf8,
+    0 0 60px #38bdf8;
+}
+
+/* Pulse */
+.pulse-ring{
+    position:absolute;
+    width:60px;
+    height:60px;
+    left:-19px;
+    top:-19px;
+
+    border-radius:50%;
+    border:2px solid #38bdf8;
+
+    animation:pulse 3s infinite;
+}
+
+.delay{
+    animation-delay:1.5s;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(.5);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(5);
+        opacity:0;
+    }
+}
+
+.pin-label{
+    position:absolute;
+    left:40px;
+    top:-15px;
+
+    white-space:nowrap;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(20px);
+
+    padding:12px 20px;
+
+    border-radius:15px;
+
+    color:white;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .hq-section{
+        height:auto;
+        min-height:900px;
+    }
+
+    .container{
+        padding: 0 16px;
+    }
+
+    .info-card{
+        width: min(520px, 92vw);
+        left: 50%;
+        top: 120px;
+        transform: translateX(-50%);
+        padding: 24px;
+    }
+
+    .info-card h2{
+        font-size:32px;
+    }
+
+    .hq-pin{
+        top: auto;
+        bottom: 110px;
+        right:auto;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    .pin-label{
+        left: 30px;
+    }
+}
+
+@media (max-width:420px){
+    .info-card{
+        top: 100px;
+    }
+
+    .info-card h2{
+        font-size:28px;
+    }
+
+    .hq-pin{
+        bottom: 90px;
+    }
+}
+
+    </style>
+<!-- Department Contacts -->
+<section class="max-w-7xl mx-auto px-gutter py-xl">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Connect with the Right Team</h2>
+<p class="font-body-md text-on-surface-variant  mx-auto mt-sm">Specialized expertise for every stage of your industrial evolution.</p>
+</div>
+<div class="mx-auto">
+
+    <div class="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-8 shadow-2xl group hover:scale-[1.02] transition-all duration-500">
+
+        <!-- Glow Effect -->
+        <div class="absolute -top-20 -right-20 w-60 h-60 bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+        <!-- Icon -->
+            <div class="relative z-10 w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-xl flex items-center justify-center mb-6 border border-white/10"style="
+    position: relative;
+    right: -46%;"">
+                <span class="material-symbols-outlined text-5xl text-cyan-400">
+                    science
+                </span>
+            </div>
+
+        <!-- Title -->
+        <h3 class="relative z-10  font-bold text-white mb-4" style="
+    text-align: center;
+">
+            Laboratory Solutions & Technical Services
+        </h3>
+
+        <!-- Description -->
+        <p class="relative z-10 text-slate-300 leading-8 mb-8">
+            SS Enterprises provides complete laboratory solutions including
+            analytical instruments, microscopes, balances,
+            spectrophotometers, pH meters, laboratory chemicals,
+            reagents, glassware, plasticware and scientific consumables.
+            We also offer installation, calibration, preventive maintenance,
+            troubleshooting and repair services for educational,
+            industrial, pharmaceutical and research laboratories.
+        </p>
+
+        <!-- Contact Box -->
+        <div class="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5">
+
+            <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-cyan-400">
+                        mail
+                    </span>
+                </div>
+
+                <div>
+                    <p class="text-slate-400 text-sm">Email Us</p>
+                    <a href="mailto:ssenterprises6822@gmail.com"
+                        class="text-white font-semibold hover:text-cyan-400 transition">
+                        ssenterprises6822@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-white/10 my-4">
+
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-green-400">
+                        call
+                    </span>
+                </div>
+
+                <div>
+    <p class="text-slate-400 text-sm mb-3">Call Us</p>
+
+    <div class="flex flex-wrap gap-3">
+
+        <a href="tel:+919850368313"
+            class="px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-white font-semibold hover:bg-green-500/20 transition">
+            📞 +91 98503 68313
+        </a>
+
+        <a href="tel:+918888135511"
+            class="px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-white font-semibold hover:bg-green-500/20 transition">
+            📞 +91 88881 35511
+        </a>
+
+    </div>
+</div>
+            </div>
+
+        </div>
+
+        <!-- Button -->
+        
+
+    </div>
+
+</div>
+<!-- Removed inline override of .mx-auto margins to preserve Tailwind mobile layout -->
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline-variant/20 full-width">
+<div class="max-w-7xl mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-1">
+<img src="assets/logo.png"
+         alt="SS Enterprises Logo"
+         class="h-16 w-auto mb-4 mx-auto md:mx-0">
+<div class="font-display-xl text-headline-md text-surface-container-lowest dark:text-primary mb-md">SS Enterprises</div>
+<p class="font-body-md text-surface-variant dark:text-on-surface-variant">Precision Engineering for a Sustainable Future.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">Quick links </h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="home.html">Home</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="about.html">About us</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="products.html">Product</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="contact.html">Contact us</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">Our services</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Laboratory Equipment</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Analytical Instruments</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Chemicals Supply</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Glassware & Plasticware</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Calibration Services</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Repair & Maintenance</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">GSTIN</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline"
+   href="assets/pdf/GST-Original-Certificates.pdf"
+   target="_blank">
+   27ADFFS2946H1ZU
+</a>
+<br>
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">UDYAM</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline"
+   href="assets/pdf/UDYAM-CERTIFICATES.pdf"
+   target="_blank">
+   Udyam-MH-26-0023377
+</a>
+<p class="text-surface-variant dark:text-on-surface-variant mt-auto font-label-sm text-label-sm opacity-60">© SS Enterprises
+
+Trusted Partner for Laboratory Equipment, Chemicals & Scientific Solutions.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions: Mouse follow for glow cards
+        document.querySelectorAll('.hover-glow').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--x', x + '%');
+                card.style.setProperty('--y', y + '%');
+            });
+        });
+
+        // Prefill from product query params
+        (function () {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const product = params.get('product');
+                const mod = params.get('mod');
+                const select = document.querySelector('#contactForm select');
+                const hiddenInput = document.getElementById('productInterestHidden');
+
+                if (product || mod) {
+                    const interestText = `${product ? product : ''}${mod ? ` (MOD: ${mod})` : ''}`.trim();
+                    if (hiddenInput) hiddenInput.value = interestText;
+                    if (select) {
+                        // Add an option if it doesn't exist
+                        let opt = Array.from(select.options).find(o => o.textContent === interestText);
+                        if (!opt && interestText) {
+                            opt = document.createElement('option');
+                            opt.textContent = interestText;
+                            opt.value = interestText;
+                            select.appendChild(opt);
+                        }
+                        if (opt) select.value = opt.value;
+                    }
+
+                    // Also try to prefill textarea if present
+                    const textarea = document.querySelector('#contactForm textarea');
+                    if (textarea && !textarea.value) {
+                        textarea.value = `Hello, I would like to request a quote for: ${interestText}. Please share pricing, lead time, and technical specs required for this product.`;
+                    }
+                }
+            } catch (err) {
+                // no-op
+            }
+        })();
+
+        // Form submission animation
+        document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Sent Successfully';
+                btn.classList.replace('bg-primary', 'bg-tertiary-container');
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-tertiary-container', 'bg-primary');
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+</body></html>

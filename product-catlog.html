@@ -1,0 +1,1056 @@
+  <!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Industrial Solutions Catalog | SS Enterprises</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Scripts -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#414755",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d2e0fe",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-container": "#f4ffff",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-container-low": "#f2f4f6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#002022",
+                        "tertiary-fixed-dim": "#00dce6",
+                        "tertiary": "#00666c",
+                        "surface": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "secondary": "#515f78",
+                        "inverse-primary": "#adc6ff",
+                        "on-surface": "#191c1e",
+                        "outline": "#717786",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-container": "#fefcff",
+                        "primary-container": "#0070eb",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-secondary-container": "#55637d",
+                        "tertiary-fixed": "#6ff6ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#008188",
+                        "outline-variant": "#c1c6d7",
+                        "on-primary-fixed-variant": "#004493",
+                        "background": "#f7f9fb",
+                        "primary": "#0058bc",
+                        "on-primary-fixed": "#001a41",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-dim": "#d8dadc",
+                        "on-background": "#191c1e",
+                        "surface-tint": "#005bc1",
+                        "inverse-surface": "#2d3133",
+                        "surface-container": "#eceef0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-xl": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .card-glow-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .card-glow {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(0, 88, 188, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .card-glow-container:hover .card-glow {
+            opacity: 1;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+
+        /* Bootstrap Tabs styling to match site theme */
+        .ss-product-tabs .nav-link {
+            border: 1px solid rgba(113, 119, 134, 0.35);
+            border-radius: 9999px !important;
+            padding: 10px 16px;
+            margin-right: 8px;
+            color: #191c1e;
+            font-weight: 700;
+        }
+
+        .ss-product-tabs .nav-link.active {
+            background: #0058bc;
+            border-color: #0058bc;
+            color: #ffffff;
+        }
+
+        .ss-product-grid {
+            padding-top: 16px;
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Bootstrap (CDN) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300" id="top-nav">
+<div class="max-w-7xl mx-auto px-gutter flex justify-between items-center h-20 w-full">
+<div class="flex items-center gap-sm">
+<span class="font-display-xl text-headline-md tracking-tighter text-primary">SS Enterprises</span>
+</div>
+
+<div class="hidden md:flex items-center gap-lg">
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="home.html">Home</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="product-catlog.html">Product</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="about-us.html">About</a>
+    <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="contact-us.html">Contact</a>
+
+</div>
+<div class="flex items-center gap-md">
+
+    <!-- Language & Contact -->
+    <div class="hidden lg:flex items-center gap-sm pr-md border-r border-outline-variant/30 relative">
+
+
+        <!-- Language -->
+        <div class="relative">
+           <a href="https://wa.me/919850368313"
+   target="_blank"
+   class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500/10 hover:bg-green-500 hover:text-white transition-all duration-300">
+
+    <i class="fa-brands fa-whatsapp text-xl"></i>
+
+</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="relative">
+            <button id="accountBtn"
+                class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+                account_circle
+            </button>
+
+            <div id="accountMenu"
+                class="hidden absolute top-10 right-0 w-72 bg-white rounded-xl shadow-xl border z-50 p-4">
+
+                <h4 class="font-semibold text-gray-800 mb-3">
+                    SS Enterprises
+                </h4>
+
+                <div class="space-y-3 text-sm">
+
+                    <a href="tel:+919850368313"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            call
+                        </span>
+                        +91 98503 68313
+                    </a>
+
+                    <a href="tel:+918888135511"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            call
+                        </span>
+                        +91 88881 35511
+                    </a>
+
+                    <a href="mailto:ssenterprises6822@gmail.com"
+                        class="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+                        <span class="material-symbols-outlined text-base">
+                            mail
+                        </span>
+                        ssenterprises6822@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Request Quote (hide on mobile) -->
+    <button
+        class="magnetic-btn px-md py-sm bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container active:scale-95 transition-all hidden md:inline-flex">
+        Request Quote
+    </button>
+
+    <!-- Mobile Hamburger (show on mobile) -->
+    <button
+        id="mobileMenuBtn"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low transition-all"
+        aria-label="Open menu"
+        aria-expanded="false"
+    >
+        <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+    </button>
+
+</div>
+<script>
+const languageBtn = document.getElementById("languageBtn");
+const languageMenu = document.getElementById("languageMenu");
+
+const accountBtn = document.getElementById("accountBtn");
+const accountMenu = document.getElementById("accountMenu");
+
+// Account/Language dropdowns (guard against missing elements)
+if (languageBtn && languageMenu) {
+    languageBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        languageMenu.classList.toggle("hidden");
+        accountMenu?.classList.add("hidden");
+    });
+}
+
+if (accountBtn && accountMenu) {
+    accountBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        accountMenu.classList.toggle("hidden");
+        languageMenu?.classList.add("hidden");
+    });
+}
+
+document.addEventListener("click", function () {
+    languageMenu?.classList.add("hidden");
+    accountMenu?.classList.add("hidden");
+});
+
+// Mobile hamburger
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (mobileMenuBtn && mobileMenu) {
+    const openMenu = () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    };
+    const closeMenu = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (mobileMenu.classList.contains('hidden')) openMenu();
+        else closeMenu();
+    });
+
+    document.addEventListener('click', () => closeMenu());
+
+    mobileMenu.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => closeMenu());
+    });
+}
+</script> 
+</div>
+</nav>
+
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden hidden absolute top-20 left-0 w-full bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 z-50">
+    <div class="max-w-7xl mx-auto px-gutter py-md flex flex-col gap-sm">
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="home.html">Home</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="product-catlog.html">Product</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="about-us.html">About</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="contact-us.html">Contact</a>
+
+        <a class="magnetic-btn px-md py-sm bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-primary-container active:scale-95 transition-all text-center mt-sm" href="#">
+            Request Quote
+        </a>
+    </div>
+</div>
+
+<main class="flex-grow max-w-7xl mx-auto w-full px-gutter py-xl">
+
+<!-- Hero Title & Category Quick Links -->
+<!-- Category Tabs -->
+<ul class="nav nav-pills ss-product-tabs mb-4" id="productTabs" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#all-products">
+           Laboratory Instrument
+        </button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lab-equipment">
+            Lab Equipment
+        </button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#chemicals">
+            Chemicals
+        </button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#glassware">
+            Glassware
+        </button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#instruments">
+            Instruments
+        </button>
+    </li>
+</ul>
+<style>
+  .card {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* --- Advanced Card VFX --- */
+  .product-card {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(113, 119, 134, 0.15);
+    transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+    transform-style: preserve-3d;
+  }
+
+  .product-card::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(0, 88, 188, 0.22), transparent 55%);
+    opacity: 0;
+    transition: opacity 250ms ease;
+    pointer-events: none;
+    transform: translateZ(-1px);
+  }
+
+  .product-card::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: linear-gradient(115deg, transparent 35%, rgba(0, 88, 188, 0.22) 50%, transparent 65%);
+    opacity: 0;
+    transform: translateX(-35%) rotate(8deg);
+    pointer-events: none;
+  }
+
+  .product-card:hover {
+    border-color: rgba(0, 88, 188, 0.35);
+    box-shadow: 0 18px 45px rgba(0, 88, 188, 0.12);
+    transform: translateY(-4px);
+  }
+
+  .product-card:hover::before {
+    opacity: 1;
+  }
+
+  .product-card:hover::after {
+    opacity: 1;
+    animation: ss-sweep 700ms ease;
+  }
+
+  @keyframes ss-sweep {
+    0% { transform: translateX(-35%) rotate(8deg); }
+    100% { transform: translateX(35%) rotate(8deg); }
+  }
+
+  .product-card .card-img-top {
+    transition: transform 450ms cubic-bezier(.2,.9,.2,1), filter 350ms ease;
+    filter: saturate(1.02) contrast(1.02);
+  }
+
+  .product-card:hover .card-img-top {
+    transform: scale(1.08);
+    filter: saturate(1.1) contrast(1.05);
+  }
+
+  .product-card .card-body {
+    padding: 12px !important;
+  }
+
+  .product-card h6 {
+    font-size: 14px;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .product-card p {
+    font-size: 12px;
+  }
+
+  .product-cta {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .product-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 100%);
+    transform: translateX(-120%);
+    transition: transform 350ms ease;
+    pointer-events: none;
+  }
+
+  .product-card:hover .product-cta::before {
+    transform: translateX(120%);
+  }
+
+  .ss-product-tabs .nav-link {
+    border-radius: 50px;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+
+  .ss-product-tabs .nav-link.active {
+    background: #0058bc;
+    color: #fff;
+  }
+
+  /* --- Staggered reveal (JS adds .ss-reveal-ready) --- */
+  .ss-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 650ms ease, transform 650ms cubic-bezier(.2,.9,.2,1);
+  }
+
+  .ss-reveal.ss-reveal-ready {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --- Modal VFX --- */
+  .ss-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+    z-index: 1050;
+  }
+
+  .ss-modal-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .ss-modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0.98);
+    opacity: 0;
+    pointer-events: none;
+    width: min(960px, calc(100vw - 24px));
+    z-index: 1051;
+
+    border-radius: 18px;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(113, 119, 134, 0.25);
+    box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition: opacity 220ms ease, transform 260ms cubic-bezier(.2,.9,.2,1);
+    overflow: hidden;
+  }
+
+  .ss-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+  }
+
+  .ss-modal::before {
+    content: "";
+    position: absolute;
+    inset: -60px;
+    background: radial-gradient(circle at var(--pmx, 50%) var(--pmy, 30%), rgba(0, 88, 188, 0.30), transparent 55%);
+    opacity: 0;
+    transition: opacity 250ms ease;
+    pointer-events: none;
+  }
+
+  .ss-modal.show::before {
+    opacity: 1;
+  }
+
+  .ss-modal .ss-modal-header {
+    background: linear-gradient(90deg, rgba(0, 88, 188, 0.12), rgba(0, 88, 188, 0.03));
+    border-bottom: 1px solid rgba(113, 119, 134, 0.18);
+  }
+
+  .ss-modal .ss-modal-thumb img {
+    transition: transform 450ms cubic-bezier(.2,.9,.2,1);
+  }
+
+  .ss-modal.show .ss-modal-thumb img {
+    transform: scale(1.04);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .product-card, .product-card::before, .product-card::after, .product-card .card-img-top, .ss-modal, .ss-modal-backdrop {
+      transition: none !important;
+      animation: none !important;
+    }
+    .ss-reveal { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+
+<div class="tab-content">
+
+    <!-- SS Quick View Modal (animated) -->
+    <div id="ssModalBackdrop" class="ss-modal-backdrop" aria-hidden="true"></div>
+    <div id="ssQuickViewModal" class="ss-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="ss-modal-header px-4 py-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex flex-column">
+                <div class="text-primary fw-bold" style="font-size: 14px;">Quick View</div>
+                <div id="ssQvTitle" class="fw-semibold" style="font-size: 18px;">Product</div>
+            </div>
+            <button id="ssQvClose" class="btn btn-outline-primary btn-sm px-3" type="button" aria-label="Close">✕</button>
+        </div>
+
+        <div class="p-4">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-12 col-lg-5 ss-modal-thumb">
+                    <div class="rounded-16 overflow-hidden border" style="background: rgba(0,0,0,0.03);">
+<img id="ssQvImage" src="" alt="" class="w-100" style="height: min(320px, 45vh); object-fit: cover;" />
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span id="ssQvCategory" class="badge text-bg-primary-subtle text-primary border border-primary-subtle">Category</span>
+                            <span id="ssQvModel" class="badge text-bg-light border">Model</span>
+                            <span id="ssQvVoltage" class="badge text-bg-light border">Voltage</span>
+                        </div>
+                        <p id="ssQvShort" class="text-muted mb-3" style="line-height: 1.5;">Short description.</p>
+
+                        <div class="rounded-16 border p-3" style="background: rgba(0,88,188,0.04);">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="material-symbols-outlined" style="font-size: 20px;">bolt</span>
+                                <div>
+                                    <div class="fw-bold" style="font-size: 14px;">Need this product?</div>
+                                    <div class="text-muted" style="font-size: 13px;">Request a quote and we will respond quickly.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-sm-row gap-2 mt-3">
+                        <a id="ssQvRequestQuote" class="btn btn-primary product-cta w-100 w-sm-auto" href="#">Request Quote</a>
+                        <button id="ssQvClose2" class="btn btn-outline-secondary w-100 w-sm-auto" type="button">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALL PRODUCTS -->
+    <div class="tab-pane fade show active" id="all-products">
+
+        <div class="row g-3">
+
+            <!-- Product Card -->
+            <div class="col-6 col-md-4 col-lg-3 ss-reveal">
+                <div class="card h-100 shadow-sm border-0 product-card js-quick-view"
+                     data-product-name="Digital Balance"
+                     data-product-mod="DB-100"
+                     data-product-category="Machinery"
+                     data-product-short="High precision weighing balance."
+                     data-product-voltage="480V / 3-Phase">
+<img src="assets/product/digital-flame-photo-meter-500x500.webp" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3" style="transform: translateZ(12px);">
+                        <h6 class="fw-bold mb-3">Flame Photometer</h6>
+                        <br>
+                        <button class="btn btn-primary btn-sm w-100 product-cta" type="button">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 ss-reveal" style="transition-delay: 70ms;">
+                <div class="card h-100 shadow-sm border-0 product-card js-quick-view"
+                     data-product-name="PH Meter"
+                     data-product-mod="PH-200"
+                     data-product-category="Machinery"
+                     data-product-short="Portable digital pH meter."
+                     data-product-voltage="110V - 220V">
+<img src="assets/product/horizontal-autoclaves-500x500.webp " class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3" style="transform: translateZ(12px);">
+                        <h6 class="fw-bold mb-3">PH Meter</h6>
+                      <br>
+                        <button class="btn btn-primary btn-sm w-100 product-cta" type="button">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 ss-reveal" style="transition-delay: 140ms;">
+                <div class="card h-100 shadow-sm border-0 product-card js-quick-view"
+                     data-product-name="Lab Glass Beaker"
+                     data-product-mod="500 ml"
+                     data-product-category="Chemicals"
+                     data-product-short="Borosilicate laboratory beaker."
+                     data-product-voltage="110V - 220V">
+<img src="https://picsum.photos/300/200?3" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3" style="transform: translateZ(12px);">
+                        <h6 class="fw-bold mb-3">Lab Glass Beaker</h6>
+                      <br>
+                        <button class="btn btn-primary btn-sm w-100 product-cta" type="button">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 ss-reveal" style="transition-delay: 210ms;">
+                <div class="card h-100 shadow-sm border-0 product-card js-quick-view"
+                     data-product-name="Microscope"
+                     data-product-mod="MS-500"
+                     data-product-category="Instruments"
+                     data-product-short="High quality research microscope."
+                     data-product-voltage="480V / 3-Phase">
+<img src="https://picsum.photos/300/200?4" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3" style="transform: translateZ(12px);">
+                        <h6 class="fw-bold mb-3">Microscope</h6>
+                            <br>
+                        <button class="btn btn-primary btn-sm w-100 product-cta" type="button">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- LAB EQUIPMENT -->
+    <div class="tab-pane fade" id="lab-equipment">
+        <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-3 ss-reveal" style="transition-delay: 70ms;">
+                <div class="card h-100 shadow-sm product-card js-quick-view"
+                     data-product-name="Hot Air Oven"
+                     data-product-mod="HAO-120"
+                     data-product-category="Lab Equipment"
+                     data-product-short="Laboratory drying oven."
+                     data-product-voltage="220V - 240V">
+<img src="https://picsum.photos/300/200?5" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3" style="transform: translateZ(12px);">
+                        <h6>Hot Air Oven</h6>
+                      
+                        <button class="btn btn-primary btn-sm w-100 product-cta mt-2" type="button">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 ss-reveal" style="transition-delay: 140ms;">
+                <div class="card h-100 shadow-sm product-card js-quick-view"
+                     data-product-name="Incubator"
+                     data-product-mod="INC-88"
+                     data-product-category="Lab Equipment"
+                     data-product-short="Temperature controlled incubator."
+                     data-product-voltage="110V - 220V">
+<img src="https://picsum.photos/300/200?6" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3" style="transform: translateZ(12px);">
+                        <h6>Incubator</h6>
+                        <p class="small">Temperature controlled incubator.</p>
+                        <button class="btn btn-primary btn-sm w-100 product-cta mt-2" type="button">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHEMICALS -->
+    <div class="tab-pane fade" id="chemicals">
+        <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm">
+<img src="https://picsum.photos/300/200?7" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3">
+                        <h6>Hydrochloric Acid</h6>
+                        <p class="small">AR Grade Chemical.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm">
+<img src="https://picsum.photos/300/200?8" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3">
+                        <h6>Sulphuric Acid</h6>
+                        <p class="small">Laboratory reagent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GLASSWARE -->
+    <div class="tab-pane fade" id="glassware">
+        <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm">
+<img src="https://picsum.photos/300/200?9" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3">
+                        <h6>Conical Flask</h6>
+                        <p class="small">Borosil flask.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSTRUMENTS -->
+    <div class="tab-pane fade" id="instruments">
+        <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow-sm">
+<img src="https://picsum.photos/300/200?10" class="card-img-top" style="height:min(240px, 32vh);object-fit:cover;">
+                    <div class="card-body p-3">
+                        <h6>Spectrophotometer</h6>
+                        <p class="small">UV-Visible Instrument.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline-variant/20 full-width">
+<div class="max-w-7xl mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-1">
+<img src="assets/logo.png"
+         alt="SS Enterprises Logo"
+         class="h-16 w-auto mb-4 mx-auto md:mx-0">
+<div class="font-display-xl text-headline-md text-surface-container-lowest dark:text-primary mb-md">SS Enterprises</div>
+<p class="font-body-md text-surface-variant dark:text-on-surface-variant">Precision Engineering for a Sustainable Future.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">Quick links </h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="home.html">Home</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="about.html">About us</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="products.html">Product</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="contact.html">Contact us</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">Our services</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Laboratory Equipment</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Analytical Instruments</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Chemicals Supply</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Glassware & Plasticware</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Calibration Services</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline" href="#">Repair & Maintenance</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">GSTIN</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline"
+   href="assets/pdf/GST-Original-Certificates.pdf"
+   target="_blank">
+   27ADFFS2946H1ZU
+</a>
+<br>
+<h4 class="text-primary-fixed dark:text-primary font-bold mb-xs">UDYAM</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary transition-all underline-offset-4 hover:underline"
+   href="assets/pdf/UDYAM-CERTIFICATES.pdf"
+   target="_blank">
+   Udyam-MH-26-0023377
+</a>
+<p class="text-surface-variant dark:text-on-surface-variant mt-auto font-label-sm text-label-sm opacity-60">© SS Enterprises
+
+Trusted Partner for Laboratory Equipment, Chemicals & Scientific Solutions.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Hover Glow Effect Logic
+        document.querySelectorAll('.card-glow-container').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // Filters: Category checkboxes + Voltage radios (search removed)
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const voltageRadios = document.querySelectorAll('input[name="voltage"]');
+        const cards = document.querySelectorAll('.product-card');
+
+
+        const getActiveCategories = () => {
+            const active = [];
+            checkboxes.forEach(cb => {
+                if (!cb.checked) return;
+                const label = cb.closest('label');
+                const txt = label?.querySelector('span')?.textContent?.trim();
+                if (txt) active.push(txt);
+            });
+            return active;
+        };
+
+        const mapCategoryToData = (category) => {
+            // data-product-category values set per card; normalize common names
+            switch (category) {
+                case 'Machinery': return 'Machinery';
+                case 'Electronics': return 'Electronics';
+                case 'Safety Systems': return 'Safety Systems';
+                case 'Raw Materials': return 'Raw Materials';
+                default: return category;
+            }
+        };
+
+        const getActiveVoltage = () => {
+            const checked = Array.from(voltageRadios).find(r => r.checked);
+            const value = checked?.closest('label')?.querySelector('span')?.textContent?.trim();
+            // our data-product-voltage is like "480V / 3-Phase" or "110V - 220V".
+            if (!value) return null;
+            if (value.includes('480')) return '480V / 3-Phase';
+            if (value.includes('110')) return '110V - 220V';
+            return null;
+        };
+
+        const normalize = (s) => (s || '').toLowerCase();
+
+        const applyFilters = () => {
+            const activeCats = getActiveCategories().map(mapCategoryToData);
+            const activeVoltage = getActiveVoltage();
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-product-category') || '';
+                const voltage = card.getAttribute('data-product-voltage') || '';
+                const name = card.getAttribute('data-product-name') || '';
+                const mod = card.getAttribute('data-product-mod') || '';
+                const short = card.getAttribute('data-product-short') || '';
+
+                const matchesCat = activeCats.length === 0 || activeCats.includes(cat);
+                const matchesVoltage = !activeVoltage || normalize(voltage).includes(normalize(activeVoltage));
+                const matchesSearch = !q || [name, mod, short, cat].some(x => normalize(x).includes(q));
+
+                const show = matchesCat && matchesVoltage && matchesSearch;
+
+                if (show) {
+                    card.classList.remove('hidden');
+                    // subtle animation
+                    gsap.to(card, { opacity: 1, scale: 1, duration: 0.15 });
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        };
+
+        checkboxes.forEach(cb => cb.addEventListener('change', applyFilters));
+        voltageRadios.forEach(r => r.addEventListener('change', applyFilters));
+
+
+        document.querySelector('button.w-full.py-sm.border.border-primary')?.addEventListener('click', () => {
+            checkboxes.forEach(cb => (cb.checked = true));
+            voltageRadios.forEach(r => (r.checked = false));
+            if (searchInput) searchInput.value = '';
+            applyFilters();
+        });
+
+        // Quick View + Request Quote
+        // SS Quick View Modal (animated)
+        const modal = document.getElementById('ssQuickViewModal');
+        const backdrop = document.getElementById('ssModalBackdrop');
+        const closeBtn = document.getElementById('ssQvClose');
+        const closeBtn2 = document.getElementById('ssQvClose2');
+
+        const qv = {
+            title: document.getElementById('ssQvTitle'),
+            category: document.getElementById('ssQvCategory'),
+            model: document.getElementById('ssQvModel'),
+            voltage: document.getElementById('ssQvVoltage'),
+            short: document.getElementById('ssQvShort'),
+            image: document.getElementById('ssQvImage'),
+            requestQuote: document.getElementById('ssQvRequestQuote')
+        };
+
+        const setFocusTrap = () => {
+            // minimal focus trap
+            const focusables = modal ? modal.querySelectorAll('a[href], button:not([disabled]), [tabindex="0"], input, select, textarea') : [];
+            if (!focusables.length) return null;
+            return {
+                first: focusables[0],
+                last: focusables[focusables.length - 1]
+            };
+        };
+
+        let focusTrap = null;
+
+        const openModal = (productCard) => {
+            if (!productCard || !modal) return;
+
+            const name = productCard.getAttribute('data-product-name') || '';
+            const mod = productCard.getAttribute('data-product-mod') || '';
+            const category = productCard.getAttribute('data-product-category') || '';
+            const short = productCard.getAttribute('data-product-short') || '';
+            const voltage = productCard.getAttribute('data-product-voltage') || '';
+            const img = productCard.querySelector('img')?.getAttribute('src') || '';
+
+            qv.title.textContent = name || 'Product';
+            qv.category.textContent = category || 'Category';
+            qv.model.textContent = mod ? `Model: ${mod}` : 'Model';
+            qv.voltage.textContent = voltage || 'Voltage';
+            qv.short.textContent = short || '';
+            qv.image.src = img;
+            qv.image.alt = name || 'Product image';
+
+            qv.requestQuote.href = `contact-us.html?product=${encodeURIComponent(name)}&mod=${encodeURIComponent(mod)}`;
+
+            backdrop?.classList.add('show');
+            modal?.classList.add('show');
+            modal?.setAttribute('aria-hidden', 'false');
+            backdrop?.setAttribute('aria-hidden', 'false');
+
+            focusTrap = setFocusTrap();
+            const preferred = modal.querySelector('#ssQvClose');
+            preferred?.focus();
+        };
+
+        const closeModal = () => {
+            if (!modal) return;
+            modal.classList.remove('show');
+            modal.setAttribute('aria-hidden', 'true');
+            backdrop?.classList.remove('show');
+            backdrop?.setAttribute('aria-hidden', 'true');
+        };
+
+        document.querySelectorAll('.js-quick-view').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const target = e.target;
+                // prevent clicks on modal buttons/links from triggering during bubbling
+                if (target && (target.closest?.('#ssQuickViewModal') || target.closest?.('#ssModalBackdrop'))) return;
+                const card = btn.closest('.product-card');
+                openModal(card);
+            });
+        });
+
+        document.querySelectorAll('.js-request-quote').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.product-card');
+                const name = card?.getAttribute('data-product-name') || '';
+                const mod = card?.getAttribute('data-product-mod') || '';
+                window.location.href = `contact-us.html?product=${encodeURIComponent(name)}&mod=${encodeURIComponent(mod)}`;
+            });
+        });
+
+        backdrop?.addEventListener('click', closeModal);
+        closeBtn?.addEventListener('click', closeModal);
+        closeBtn2?.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Staggered reveal
+        const reveal = () => {
+            const items = document.querySelectorAll('.ss-reveal');
+            const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReduced) {
+                items.forEach(el => el.classList.add('ss-reveal-ready'));
+                return;
+            }
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.getAttribute('style')?.match(/transition-delay:\s*(\d+)ms/)?.[1];
+                        if (delay) el.style.transitionDelay = `${delay}ms`;
+                        el.classList.add('ss-reveal-ready');
+                        io.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.12 });
+            items.forEach(el => io.observe(el));
+        };
+        reveal();
+
+        // Simple Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>
